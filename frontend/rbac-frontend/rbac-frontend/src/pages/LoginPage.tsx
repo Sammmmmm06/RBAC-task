@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
 
@@ -35,11 +36,11 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
 
-      <div className="bg-white p-6 rounded shadow w-80">
+      <div className="w-96 bg-white border border-gray-200 p-8 rounded-xl shadow-lg">
 
-        <h1 className="text-2xl font-bold mb-4 text-center">
+        <h1 className="text-2xl font-semibold mb-4 text-center text-gray-800">
           Login
         </h1>
 
@@ -52,7 +53,7 @@ const LoginPage = () => {
           <input
             type="email"
             placeholder="Enter your email"
-            className="border p-2 rounded"
+            className="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
             {...register("email")}
           />
 
@@ -60,16 +61,20 @@ const LoginPage = () => {
           <input
             type="password"
             placeholder="Enter your password"
-            className="border p-2 rounded"
+            className="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
             {...register("password")}
           />
 
           <button
             type="submit"
-            className="bg-blue-500 text-white p-2 rounded mt-2"
+            className="bg-purple-600 text-white p-2 rounded mt-2 hover:bg-purple-700 transition"
           >
             Login
           </button>
+
+          <p className="text-sm text-center mt-2">
+            Don't have an account? <Link to="/register">Sign up</Link>
+          </p>
 
         </form>
 
